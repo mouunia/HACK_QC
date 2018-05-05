@@ -134,13 +134,7 @@ public class MainActivity extends AppCompatActivity {
                             //afficher les coordones parse sous forme de tableau
                             System.out.println(coordonesX);
                             System.out.println(coordonesY);
-
-
-
-                            //prendre les string dans le champs coordonates
-
-
-                            // creer un tableau json
+                            
 
 
 
