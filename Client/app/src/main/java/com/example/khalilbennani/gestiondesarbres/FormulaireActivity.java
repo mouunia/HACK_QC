@@ -1,11 +1,19 @@
 package com.example.khalilbennani.gestiondesarbres;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class FormulaireActivity extends AppCompatActivity {
 
@@ -16,7 +24,55 @@ public class FormulaireActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ArrayAdapter adapter = new ArrayAdapter<LinearLayout>(this,R.layout.content_formulaire);
 
+
+    }
+
+
+
+
+    private class ArbreAdapter extends ArrayAdapter<Arbre> {
+
+        private ArrayList<Arbre> items;
+
+        public ArbreAdapter(Context context, int textViewResourceId, ArrayList<Arbre> items) {
+            super(context, textViewResourceId, items);
+            this.items = items;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View v = convertView;
+            if (v == null) {
+                LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                v = vi.inflate(R.layout.oneFeature, null);
+            }
+            Arbre arbre = items.get(position);
+            if (arbre != null) {
+                TextView typeFeatures = (TextView) v.findViewById(R.id.typeFeatures);
+                TextView typeGeometry = (TextView) v.findViewById(R.id.typeGeometry);
+                TextView textCoordinates = (TextView) v.findViewById(R.id.textCoordinates);
+                TextView textEspece = (TextView) v.findViewById(R.id.textEspece);
+                TextView textDiametre = (TextView) v.findViewById(R.id.textDiametre);
+                if (typeFeatures != null) {
+                    typeFeatures.setText(arbre.getType());
+                }
+                if(typeGeometry != null){
+                    typeGeometry.setText(arbre.getTypeGeo());
+                }
+                if (textCoordinates != null) {
+                    textCoordinates.setText(arbre.getCoord_x()+ " " + arbre.getCoord_y());
+                }
+                if(textEspece != null){
+                    textEspece.setText(arbre.getEspece());
+                }
+                if (textDiametre != null) {
+                    textDiametre.setText((int) arbre.getDiametre());
+                }
+            }
+            return v;
+        }
     }
 
 }

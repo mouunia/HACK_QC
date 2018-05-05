@@ -32,7 +32,10 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_formulaire" />
+    <include
+        layout="@layout/content_formulaire"
+        android:layout_height="503dp"
+        tools:layout_editor_absoluteY="64dp" />
 
 
 
