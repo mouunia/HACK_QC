@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">gestionDesArbres</string>
+    <string name="title_activity_list_fonct">ListFonctActivity</string>
 </resources>
