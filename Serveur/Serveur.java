@@ -1,3 +1,6 @@
+package testServer;
+
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
@@ -6,6 +9,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,97 +24,135 @@ public class Serveur {
     private static Socket socket;
     static String user = "";
     static String userPassWord = "";
+    static String body= "";
+    private static final int Port = 5000;
     static Map<String,String> myMap = new HashMap<String, String>();
 
 
     public static void main(String[] args) throws Exception {
-        System.out.print("LANCEMENT DU SERVEUR\n\n");
-        String ip = checkIP();
-        int port = checkPort();
+        System.out.print("LANCEMENT DU SERVEUR\n");
+        InetAddress ip= InetAddress.getByName("127.0.0.1");
+        // pour des fin de test
         readFromFile();
+        
+  	  	try {
 
+  		ip = InetAddress.getLocalHost();
+  		System.out.println("Current IP address : " + ip.getHostAddress());
+
+  	  	} catch (UnknownHostException e) {
+
+  		e.printStackTrace();
+
+  	  	}
+
+  	  	
         System.out.println("En attente d'utilisateurs...\n\n");
         ServerSocket serversocket;
-        InetAddress locIP = InetAddress.getByName(ip);
         serversocket = new ServerSocket();
         serversocket.setReuseAddress(true);
-        serversocket.bind(new InetSocketAddress(locIP, port));
-
-
+        serversocket.bind(new InetSocketAddress(ip, Port));
 
         socket = serversocket.accept();
-        System.out.format("Application de filtres d'image lancée sur  %s:%d%n\n", ip, port);
 
-        //khalil catch from the client
+        //catch from the client
         BufferedReader inputBuffer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter output = new PrintWriter(socket.getOutputStream(), true);
-//        output = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
 
-
-
-        String userName;
-        String password;
         boolean userChecked = false;
         
         	//lire la premiere donnee qui vient par le buffert du client
-            userName = inputBuffer.readLine();
+            user = inputBuffer.readLine();
         	//lire la deuxieme donnee qui vient par le buffert du client
-            password = inputBuffer.readLine();
+            userPassWord = inputBuffer.readLine();
             
-            if(myMap.containsKey(userName)) {
-                if(myMap.containsValue(password)) {
+          while (!userChecked)
+          {
+            if(myMap.containsKey(user)) {
+                if(myMap.containsValue(userPassWord)) {
                     userChecked = true;
-                    System.out.println("user Trouvé et connection reussi");
+                    System.out.println("user Trouve et connection reussie");
                     try {
-                        while (true) {
-                            new SobelFilter(serversocket.accept(),userName).start();
+                        	// block de code d'envoie
+                            output.println("le compte :"+ user + " est connecte");
+                            body= inputBuffer.readLine();
+                            while(!body.equals("exit"))
+                            {
+                            switch (body) 
+                            {
+                            case "ab": 
+                            	body = "January";
+                            	output.println(body);
+                                break;
+                            case "bc":  
+                            	body = "February";
+                            	output.println(body);
+                                break;
+                            case "cd":  
+                            	body = "March";
+                            	output.println(body);
+                            	break;
+                            
+                            default: 
+                            	body = "Invalid month";
+                            	output.println(body);
+                                break;
+                            }
+                            body= inputBuffer.readLine();
                         }
+                            output.println(body);
                     } finally {
                         serversocket.close();
                     }
-
-
-
+                    
+                    
                 }
                 else {
                     userChecked = false;
-                    System.out.println("password pas valide connection echoué");
+                    System.out.println("password pas valide connection echoue");
 
                 }
             }
             else{
-                myMap.put(userName, password);
-                writeFile(userName, password);
+                myMap.put(user, userPassWord);
+                writeFile(user, userPassWord);
                 userChecked = false;
-                System.out.println("Username pas valide connection echoué");
-
-
+                System.out.println("Username pas valide connection echoue");
             }
-            System.out.println("Fin des if");
+          }
 
         //afficher a temps reel
-       
-
         output.flush();
-        System.out.println("after the flush close");
-
+        System.out.println("after the flush");
 
     }
 
+    //Methode pour ecrire dans un fichier
+    private static void writeFile(String userName, String password) {
+        // TODO Auto-generated method stub
 
+        final File fichier = new File(System.getProperty("user.dir") + File.separator + "users.txt");
 
+        try {
+            // creation d'un writer (un Ã©crivain)
+            final FileWriter writer = new FileWriter(fichier,true);
+            try {
+                writer.append(userName + " " + password);
+                writer.write(System.getProperty( "line.separator" ));
+            } finally {
+                // quoiqu'il arrive, on ferme le fichier
+                writer.close();
+            }
+        } catch (Exception e) {
+            System.out.println("Impossible de creer le fichier");
+        }
 
+    }
+    
     private static void readFromFile() {
         // TODO Auto-generated method stub
         File file = new File(System.getProperty("user.dir") + File.separator + "users.txt");
-        if(!file.exists()) {
- //**pas besoin de creer un fichier puisque on peut mettre un par defaut
-           /* try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }*/
-        }
+     
         BufferedReader br;
         try {
             br = new BufferedReader(new FileReader(file));
@@ -118,14 +160,6 @@ public class Serveur {
 
             String line;
             String[] credentials;
-           // while ((line = br.readLine()) != null) {
-                // process the line.
-              //  credentials = line.split(" ");
-              //  user = credentials[0];
-              //  userPassWord = credentials[1];
-              //  myMap.put(user, userPassWord);
-
-           // }
             
             Scanner sc2 = null;
             String username = "";
@@ -148,7 +182,6 @@ public class Serveur {
                         //System.out.println(s + " userName: " + testClassement);
                         username = s;
                         
-
                     }else{
                        // System.out.println(s + "passWord: " + testClassement);
                         password = s;
@@ -158,6 +191,7 @@ public class Serveur {
                 myMap.put(username, password);
             }
             System.out.println(myMap.keySet() + " " + myMap.values());
+            br.close();
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
@@ -165,191 +199,5 @@ public class Serveur {
         }
     }
 
-
-
-    //Methode pour ecrire dans un fichier
-    private static void writeFile(String userName, String password) {
-        // TODO Auto-generated method stub
-
-        final File fichier = new File(System.getProperty("user.dir") + File.separator + "users.txt");
-
-        try {
-            // creation d'un writer (un écrivain)
-            final FileWriter writer = new FileWriter(fichier,true);
-            try {
-                writer.append(userName + " " + password + "\n");
-            } finally {
-                // quoiqu'il arrive, on ferme le fichier
-                writer.close();
-            }
-        } catch (Exception e) {
-            System.out.println("Impossible de creer le fichier");
-        }
-
-    }
-
-    //Methode pour verifier le port
-    private static int checkPort() {
-        //verification du port
-        // Get the server address from a dialog box.
-        int port = 0;
-
-        boolean portBool = false;
-
-        do{
-            System.out.println("Entrez le port:");
-            @SuppressWarnings("resource")
-			Scanner reader = new Scanner(System.in);
-            port = reader.nextInt();
-
-
-            if(port >= 5000 && port <= 5050)
-            {
-                System.out.println("le port saisi est correct");
-                portBool = true;
-
-
-            }else{
-                System.out.println("le port saisi n'est pas correct, veuillez ressayer");
-
-            }
-
-        }while(!portBool);
-
-        return port;
-    }
-
-    //Methode pour verifier l'adresse ip
-    private static String checkIP() {
-        // TODO Auto-generated method stub
-        boolean isIp = false;
-        String serverAddress = "";
-
-
-        do{
-            System.out.println("Entrez l'adresse IP du serveur:");
-            @SuppressWarnings("resource")
-            Scanner reader = new Scanner(System.in);
-            serverAddress = reader.next();
-
-            isIp = IPAddressValidator(serverAddress);
-
-            if(!isIp)
-            {
-                System.out.println("Veuillez verifier l adresse ip entrée");
-            }else{
-                System.out.println("Adresse Ip Correcte");
-            }
-
-        }while(!isIp);
-
-
-        return serverAddress;
-
-    }
-
-
-//Methode appelee par la methode checkip pour verifier une adresse ip
-//selon un pattern pre etablie
-
-    public static boolean IPAddressValidator(String ip){
-
-        Pattern pattern;
-        Matcher matcher;
-
-        pattern = Pattern.compile("^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
-                "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
-                "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\." +
-                "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
-        matcher = pattern.matcher(ip);
-
-        return matcher.find();
-    }
-
-
-
-    /**
-     * A private thread to handle capitalization requests on a particular
-     * socket.  The client terminates the dialogue by sending a single line
-     * containing only a period.
-     */
-    private static class SobelFilter extends Thread {
-        private Socket socket;
-        private String username;
-        public SobelFilter(Socket socket, String username) {
-            System.out.println("Nouvelle connexion avec le client " + username + " au " + socket);
-            this.socket = socket;
-            this.username = username;
-        }
-
-        /**
-         * Services this thread's client by first sending the
-         * client a welcome message then repeatedly reading strings
-         * and sending back the capitalized version of the string.
-         */
-          public void run() {
-              String fileName = "";
-              try {
-                  BufferedReader inputBuffer = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                  fileName = inputBuffer.readLine();
-
-              } catch (IOException e) {
-                  e.printStackTrace();
-              }
-
-              try {
-
-
-                while (true) {
-
-                    BufferedImage image = ImageIO.read(ImageIO.createImageInputStream(socket.getInputStream()));
-                    displayImage(image);
-
-                    DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-                    Date date = new Date();
-                    BufferedImage newImage = null;
-                    System.out.println("[" + username + " - " + socket.getInetAddress() +
-                    ":" + socket.getLocalPort() + " - " + sdf.format(date) + "] : Image " +
-                            fileName + ".jpg "+ "reçue pour traitement.");
-
-                    newImage = applySobelFilter(image);
-                    ImageIO.write(newImage, "JPG", socket.getOutputStream());
-
-                }
-
-
-
-            } catch (IOException e) {
-                System.out.println("Gestion d'exception client " + username+ ": " + e);
-            } finally {
-                try {
-                    socket.close();
-                } catch (IOException e) {
-                    System.out.println(e.toString());
-                }
-                System.out.println("Session avec le client " + username + " terminée");
-            }
-        }
-
-
-        private void displayImage(BufferedImage image){
-            System.out.println("Lecture de l image en cours...");
-            JFrame frame = new JFrame();
-            frame.setSize(300, 300);
-            JLabel label = new JLabel(new ImageIcon(image));
-            frame.add(label);
-            frame.setVisible(true);
-            System.out.println("Affichage...");
-        }
-
-        private BufferedImage applySobelFilter(BufferedImage image){
-            BufferedImage newImage = null;
-            try {
-                newImage = Sobel.process(image);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return newImage;
-        }
-    }
+ 
 }
