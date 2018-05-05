@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Features"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+            </TableRow>
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Type"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="0.2"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/GPS1_LONGITUDE"
+                    android:textColor="#000"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:padding="5dp"
+                    android:text="Geometry"
+                    android:textColor="#000"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Type"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="0.2"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/LVDM_BRIDGEWIRE_RES_DROGUE"
+                    android:textColor="#000"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Coordinates"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="0.2"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/textCoordinates"
+                    android:textColor="#000"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Properties"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Espece"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="0.2"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/textEspece"
+                    android:textColor="#000"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="0.05"
+                    android:text="Diametre_Tronc"
+                    android:padding="5dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="0.2"
+                    android:padding="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/textDiametre"
+                    android:textColor="#000"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

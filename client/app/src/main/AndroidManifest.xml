@@ -19,6 +19,14 @@
         <activity
             android:name=".ListFonctActivity"
             android:label="@string/title_activity_list_fonct"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MissionActivity"
+            android:label="@string/title_activity_mission"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FormulaireActivity"
+            android:label="@string/title_activity_formulaire"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
