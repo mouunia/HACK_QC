@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
     JSONObject geometryCoordinates;
     JSONObject geometryJson;
 
+    //creation d un tableau de Double pour mettre les coordones prises du json
+    //a fin de les comparés avec les coordonees de depart
+    String coordonesX, coordonesY ;
+
+
 
 
 
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         editUsername = (EditText) findViewById(R.id.username);
         rememberMe = (CheckBox) findViewById(R.id.rememberMe);
         rememberPassword = (CheckBox) findViewById(R.id.rememberPassword);
+
 
 
         //code khalil test
@@ -111,7 +117,27 @@ public class MainActivity extends AppCompatActivity {
                         geometryJson = new JSONObject(geometry);
                         JSONObject porprieteJson = new JSONObject(porpriete);
 
-                        //prendre les string dans le champs coordonates
+
+
+                            //mettre les coordones dans un tableau de json pour pouvoir acceder au jeu de donnees
+                            JSONArray tableau = geometryJson.getJSONArray("coordinates");
+
+
+
+                            //mettre les donnes recuperer sous forme de objet dans un tableau de double (double parse)
+                            coordonesX = tableau.getString(0);
+
+                            coordonesY = tableau.getString(1);
+
+
+
+                            //afficher les coordones parse sous forme de tableau
+                            System.out.println(coordonesX);
+                            System.out.println(coordonesY);
+
+
+
+                            //prendre les string dans le champs coordonates
 
 
                             // creer un tableau json
@@ -137,9 +163,6 @@ public class MainActivity extends AppCompatActivity {
                             count++;
                         }
 
-                        //afficher les coodoness
-                        JSONArray tableau = geometryJson.getJSONArray("coordinates");
-                        System.out.println(tableau.get(0) );
 
 
                         //afficher du json en entier
