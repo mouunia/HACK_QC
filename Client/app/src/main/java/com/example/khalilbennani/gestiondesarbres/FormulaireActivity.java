@@ -27,7 +27,7 @@ public class FormulaireActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         arbres = new ArrayList<Arbre>();
         this.m_adapter = new ArbreAdapter(this, R.layout.oneFeature, arbres);
-        setListAdapter(this.m_adapter);
+       // setListAdapter(this.m_adapter);
 
         ArrayAdapter adapter = new ArrayAdapter<LinearLayout>(this,R.layout.oneFeature);
 
