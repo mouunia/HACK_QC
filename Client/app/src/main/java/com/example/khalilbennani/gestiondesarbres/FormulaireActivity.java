@@ -17,14 +17,19 @@ import java.util.ArrayList;
 
 public class FormulaireActivity extends AppCompatActivity {
 
+    private ArrayList<Arbre> arbres = null;
+    private ArbreAdapter m_adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulaire);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        arbres = new ArrayList<Arbre>();
+        this.m_adapter = new ArbreAdapter(this, R.layout.oneFeature, arbres);
+        setListAdapter(this.m_adapter);
 
-        ArrayAdapter adapter = new ArrayAdapter<LinearLayout>(this,R.layout.content_formulaire);
+        ArrayAdapter adapter = new ArrayAdapter<LinearLayout>(this,R.layout.oneFeature);
 
 
     }
