@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     JSONObject jsonObject = new JSONObject();
     JSONArray jsonArray =new JSONArray();
     String json_string;
+    JSONObject geometryCoordinates;
+    JSONObject geometryJson;
 
 
 
@@ -87,8 +89,9 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         //pour le while
                         int count = 0;
+                        //creation d un tableau de json
                         jsonArray  =  jsonObject.getJSONArray("features");
-                        String type,geometry;
+                        String type,geometry,porpriete;
 
                         //creer un tableau de json pour mettre les objet lu
                         while (count < jsonArray.length()) {
@@ -96,17 +99,51 @@ public class MainActivity extends AppCompatActivity {
                             JSONObject Jo = jsonArray.getJSONObject(count);
 
 
-                            type = Jo.getString("type");
-                            geometry = Jo.getString("geometry");
 
+                        //String pour recuperer les valeur des string qui constitues le json
+                           // type = Jo.getString("type");
+                            geometry = Jo.getString("geometry");
+                            porpriete = Jo.getString("properties");
+
+
+                            //Creation des objet json -- les sous tableaux du json pere
+//                        JSONObject typeJson = new JSONObject(type);
+                        geometryJson = new JSONObject(geometry);
+                        JSONObject porprieteJson = new JSONObject(porpriete);
+
+                        //prendre les string dans le champs coordonates
+
+
+                            // creer un tableau json
+
+
+
+                        /*
+                            //afficher les types
                             Log.i("type: ", type);
+
+                            //afficher la geometrie
                             Log.i("geometry: ", geometry);
 
+                            //affichier les coordonnees
+                            Log.i("coordonnees: ", geometryJson.get("coordinates").toString());
+
+                            //affichier les porprietes
+                            Log.i("Espece: ", porprieteJson.get("Espece").toString());
+                            Log.i("Diametre_Tronc: ", porprieteJson.get("Diametre_Tronc").toString());
+
+*/
 
                             count++;
                         }
 
-                        Log.i("alllopppppppppppppp:", response_khalil);
+                        //afficher les coodoness
+                        JSONArray tableau = geometryJson.getJSONArray("coordinates");
+                        System.out.println(tableau.get(0) );
+
+
+                        //afficher du json en entier
+                     //   Log.i("alllopppppppppppppp:", response_khalil);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
