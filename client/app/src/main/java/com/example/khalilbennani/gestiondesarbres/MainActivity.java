@@ -1,38 +1,29 @@
 package com.example.khalilbennani.gestiondesarbres;
 
-<<<<<<< HEAD
-import android.app.VoiceInteractor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-=======
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
->>>>>>> 81c13c395a7997c272bcc4dfb8cdbb6585f79e66
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-<<<<<<< HEAD
+import com.example.khalilbennani.gestiondesarbres.Utilitaires.Preferences;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-=======
-import com.example.khalilbennani.gestiondesarbres.Utilitaires.Preferences;
->>>>>>> 81c13c395a7997c272bcc4dfb8cdbb6585f79e66
+
 
 public class MainActivity extends AppCompatActivity {
     private CheckBox rememberMe;
@@ -63,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         rememberPassword = (CheckBox) findViewById(R.id.rememberPassword);
 
 
-<<<<<<< HEAD
         //code khalil test
 
         OkHttpClient client = new OkHttpClient();
@@ -74,16 +64,16 @@ public class MainActivity extends AppCompatActivity {
                     .build();
 
             client.newCall(request).enqueue(new Callback() {
-
                 @Override
-                public void onFailure(Call call, IOException e){
+                public void onFailure(Request request, IOException e) {
                     Log.i("alllopppppppppppppp:","pas reisso");
 
 
                 }
 
                 @Override
-                public void onResponse(Call call, Response response) throws IOException {
+                public void onResponse(Response response) throws IOException {
+
                     String response_khalil = response.body().string();
 
                     //transformer le string recu par la fonction get a un objet Json
@@ -103,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         //creer un tableau de json pour mettre les objet lu
                         while (count < jsonArray.length()) {
 
-                           JSONObject Jo = jsonArray.getJSONObject(count);
+                            JSONObject Jo = jsonArray.getJSONObject(count);
 
 
                             type = Jo.getString("type");
@@ -122,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
+                ///
 
             });
 
@@ -130,8 +121,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-=======
         String username = Preferences.get(Preferences.USERNAME);
         editUsername.setText(username);
         String password = Preferences.get(Preferences.PASSWORD);
@@ -174,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
->>>>>>> 81c13c395a7997c272bcc4dfb8cdbb6585f79e66
     }
 
     /*
