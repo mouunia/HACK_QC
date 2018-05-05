@@ -29,7 +29,7 @@ tools:activity="com.example.mounia.client.Activites.MainActivity">
         android:id="@+id/formLogo"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="10dp"
         android:scaleType="fitCenter" />
 
     <ScrollView
@@ -43,6 +43,7 @@ tools:activity="com.example.mounia.client.Activites.MainActivity">
             android:layout_height="match_parent"
             android:layout_marginEnd="30dp"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/transparant"
             android:orientation="vertical">
 
@@ -50,7 +51,8 @@ tools:activity="com.example.mounia.client.Activites.MainActivity">
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/rounded_white"
@@ -104,6 +106,7 @@ tools:activity="com.example.mounia.client.Activites.MainActivity">
                 android:layout_gravity="center"
                 android:onClick="onStartClick"
                 android:padding="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="START"
                 android:textStyle="normal" />
 

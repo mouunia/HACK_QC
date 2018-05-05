@@ -26,10 +26,10 @@ public class FormulaireActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         arbres = new ArrayList<Arbre>();
-        this.m_adapter = new ArbreAdapter(this, R.layout.oneFeature, arbres);
+        this.m_adapter = new ArbreAdapter(this, R.layout.onefeature, arbres);
        // setListAdapter(this.m_adapter);
 
-        ArrayAdapter adapter = new ArrayAdapter<LinearLayout>(this,R.layout.oneFeature);
+        ArrayAdapter adapter = new ArrayAdapter<LinearLayout>(this,R.layout.onefeature);
 
 
     }
@@ -51,7 +51,7 @@ public class FormulaireActivity extends AppCompatActivity {
             View v = convertView;
             if (v == null) {
                 LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                v = vi.inflate(R.layout.oneFeature, null);
+                v = vi.inflate(R.layout.onefeature, null);
             }
             Arbre arbre = items.get(position);
             if (arbre != null) {
