@@ -11,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.khalilbennani.gestiondesarbres.Utilitaires.Preferences;
-import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -22,7 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -63,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     .url(url)
                     .build();
 
-            client.newCall(request).enqueue(new Callback() {
+
+
+        client.newCall(request).enqueue(new Callback() {
                 @Override
                 public void onFailure(Request request, IOException e) {
                     Log.i("alllopppppppppppppp:","pas reisso");
@@ -112,11 +112,9 @@ public class MainActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                 }
-                ///
+
 
             });
-
-
 
 
 
