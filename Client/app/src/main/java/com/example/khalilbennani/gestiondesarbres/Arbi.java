@@ -7,6 +7,7 @@ import java.util.List;
 public class Arbi extends Application{
 
     private List<Arbre> listArbre;
+    private boolean estRempli = false;
 
     public void setList(java.util.List<Arbre> list)
     {
@@ -17,4 +18,15 @@ public class Arbi extends Application{
     {
         return listArbre;
     }
+
+    public void setEstRemplie(boolean remplie)
+    {
+        estRempli= remplie;
+    }
+
+    public boolean getEstRemplie()
+    {
+        return estRempli;
+    }
+
 }

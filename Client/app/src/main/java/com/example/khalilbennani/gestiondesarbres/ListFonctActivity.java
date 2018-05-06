@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -112,8 +113,20 @@ public class ListFonctActivity extends AppCompatActivity {
                         listArbres.add(arbreTemp);
                         count++;
                     }
-
                     ((Arbi)getApplication()).setList(listArbres);
+                    ((Arbi)getApplication()).setEstRemplie(true);
+                    Button buttonSaisie = (Button) findViewById(R.id.buttonSaisir);
+                    if(((Arbi)getApplication()).getEstRemplie()) {
+                        //remplissage fini ?
+                        //buttonSaisie.setEnabled(true);
+                        runOnUiThread(new OnUIThreadRunnable(buttonSaisie));
+                    }
+
+                    // Assigner la donnee et la couleur du background au UI
+                    //if (getView() != null) {
+
+                    //}
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -122,6 +135,20 @@ public class ListFonctActivity extends AppCompatActivity {
 
         });
 
+
+    }
+
+    class OnUIThreadRunnable implements Runnable {
+        private Button but = null;
+
+        public OnUIThreadRunnable(Button b1) {
+            this.but=b1;
+        }
+
+        @Override
+        public void run() {
+            but.setEnabled(true);
+        }
     }
 
 
