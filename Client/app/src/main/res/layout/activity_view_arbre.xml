@@ -90,12 +90,7 @@
             android:text="Coordinates"
             android:textColor="#000" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.05"
-            android:text="voir position"
-            android:onClick="OnViewPositionClick"/>
+
 
         <TextView
             android:id="@+id/textCoordinates"
@@ -133,16 +128,7 @@
             android:text="Espece"
             android:textColor="#000" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="154dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100dp"
-            android:layout_weight="0.05"
-            android:text="Vue google"
-            android:onClick="vueGoogle"/>
+
 
         <TextView
             android:id="@+id/textEspece"
@@ -166,7 +152,7 @@
             android:text="Diametre Tronc"
             android:textColor="#000" />
 
-        <TextView
+         <TextView
             android:id="@+id/textDiametre"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -178,7 +164,27 @@
             android:textColor="#000" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="0.05"
+            android:text="voir position" />
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_weight="0.05"
+            android:onClick="vueGoogle"
+            android:text="Vue google" />
+        <Button
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
