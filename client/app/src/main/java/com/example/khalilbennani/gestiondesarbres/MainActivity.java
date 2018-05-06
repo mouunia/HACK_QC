@@ -1,5 +1,6 @@
 package com.example.khalilbennani.gestiondesarbres;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     String response_authentification;
 
+    //private static int SPLASH_TIME_OUT = 4000;
+
 
     JSONObject jsonObject = new JSONObject();
     JSONObject idJson = new JSONObject();
@@ -49,8 +52,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
         Preferences.init(getBaseContext());
 
         editPassword = (EditText) findViewById(R.id.password);
@@ -65,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
         editPassword.setText(password);
         rememberPassword.setChecked(Boolean.parseBoolean(Preferences.get(Preferences.REMEMBER_PASSWORD)));
         rememberMe.setChecked(Boolean.parseBoolean(Preferences.get(Preferences.REMEMBER_ME)));
+
+
+
+
 
         // LOGIN
         buttonLogin = findViewById(R.id.login);
