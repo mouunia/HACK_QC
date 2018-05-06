@@ -165,8 +165,7 @@ public class MainActivity extends AppCompatActivity {
    * Pour ouvrir le layout de mode de reception
    */
     public void onStartClick(View view){
-        Intent intent = new Intent(this, ListFonctActivity.class);
-        intent.putExtra("USER_NAME", editUsername.getText().toString());
+        Intent intent = new Intent(this, ChoixDeLaVille.class);
         startActivity(intent);
     }
 
