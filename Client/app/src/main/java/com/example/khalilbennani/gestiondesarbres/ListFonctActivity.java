@@ -144,6 +144,7 @@ public class ListFonctActivity extends AppCompatActivity {
                         Object diametreObject = porprieteJson.get("Diametre_Tronc");
                         String diametreString = diametreObject.toString();
                         double diametre = 0;
+
                         try {
                             diametre = Double.parseDouble(diametreString);
                             arbreTemp.setDiametre(diametre);
