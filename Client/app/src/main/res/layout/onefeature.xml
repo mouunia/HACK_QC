@@ -5,13 +5,7 @@
     android:layout_weight="1"
     android:orientation="vertical">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -23,11 +17,7 @@
                 android:text="Features"
                 android:textColor="#000"
                 android:textSize="22sp" />
-        </TableRow>
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,6 +34,7 @@
             <TextView
                 android:id="@+id/typeFeatures"
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.2"
@@ -51,11 +42,6 @@
                 android:padding="5dp"
                 android:textColor="#000" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,11 +55,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,18 +69,13 @@
             <TextView
                 android:id="@+id/typeGeometry"
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.2"
                 android:fontFamily="casual"
                 android:padding="5dp"
                 android:textColor="#000" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,6 +90,7 @@
             <TextView
                 android:id="@+id/textCoordinates"
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.2"
@@ -121,11 +98,7 @@
                 android:padding="5dp"
                 android:textColor="#000" />
 
-        </TableRow>
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -139,11 +112,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-        </TableRow>
 
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -158,6 +127,7 @@
             <TextView
                 android:id="@+id/textEspece"
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.2"
@@ -165,11 +135,6 @@
                 android:padding="5dp"
                 android:textColor="#000" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,6 +149,7 @@
             <TextView
                 android:id="@+id/textDiametre"
                 android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_column="1"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="0.2"
@@ -191,9 +157,15 @@
                 android:padding="5dp"
                 android:textColor="#000" />
 
-        </TableRow>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginBottom="10dp"
+        android:text="Action Sur l'arbre"
+        />
 
-    </TableLayout>
 </LinearLayout>
 
 
