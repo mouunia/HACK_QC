@@ -2,6 +2,7 @@ package com.example.khalilbennani.gestiondesarbres;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -30,10 +33,50 @@ public class ListFonctActivity extends AppCompatActivity {
     JSONArray jsonArray =new JSONArray();
     JSONObject geometryJson;
 
+    //declaration de la progresse bar
+    private ProgressBar mProgressBar;
+    //declaration du text de la progressBar
+    private TextView mLoadingText;
+    //etat de la progression
+    private int mProgressStatus = 0;
+
+    private Handler mHandler = new Handler();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_fonct);
+
+
+        //connecter les progressbar et le textprogressBar avec l interface graphique
+        mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
+        mLoadingText = (TextView) findViewById(R.id.loadingCompletTextView);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (mProgressStatus < 100){
+                    mProgressStatus++;
+                    android.os.SystemClock.sleep(300);
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            mProgressBar.setProgress(mProgressStatus);
+                        }
+                    });
+                }
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        mLoadingText.setVisibility(View.VISIBLE);
+                    }
+                });
+            }
+        }).start();
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
