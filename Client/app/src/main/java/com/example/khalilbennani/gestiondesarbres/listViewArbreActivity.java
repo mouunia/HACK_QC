@@ -26,6 +26,7 @@ import java.util.List;
 public class listViewArbreActivity extends AppCompatActivity {
 
     List<Arbre> listArbres= null;
+    List<String> liste= null;
     JSONObject jsonObject = new JSONObject();
     JSONArray jsonArray =new JSONArray();
     JSONObject geometryJson;
@@ -35,7 +36,7 @@ public class listViewArbreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view_arbre);
         listArbres = new ArrayList<>();
-
+        liste = new ArrayList<>();
 
         OkHttpClient client = new OkHttpClient();
         String url = "https://www.longueuil.quebec/sites/longueuil/files/donnees_ouvertes/arbres.json";
@@ -95,6 +96,7 @@ public class listViewArbreActivity extends AppCompatActivity {
 
                     //affichier les porprietes
                     arbreTemp.setEspece(porprieteJson.get("Espece").toString());
+                    liste.add(porprieteJson.get("Espece").toString());
                     Object diametreObject = porprieteJson.get("Diametre_Tronc");
                     String diametreString = diametreObject.toString();
                     double diametre = 0;
@@ -141,9 +143,9 @@ public class listViewArbreActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<Arbre> adapter = new ArrayAdapter<Arbre>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this,
-                android.R.layout.simple_list_item_1, listArbres
+                android.R.layout.simple_list_item_1, liste
         );
 
         listview.setAdapter(adapter);
