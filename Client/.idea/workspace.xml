@@ -10,15 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b14eb51c-c61a-4423-bc30-42d3af375799" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/betula_populifolia_bouleau_gris.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/celtis_occidentalis_micocoulier_occidental.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/picea_sp_epinette_sp.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbre.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbre.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/Acer rubrum - Érable rouge.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arbre1.jpg" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/Fraxinus sp. - Frêne sp..gif" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arbre6.gif" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/Gymnocladus dioicus - Chicot du canada.JPG" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arbre5.JPG" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/Malus sp. - Pommetier sp..jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arbre2.jpg" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/arbres1.jpg" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
