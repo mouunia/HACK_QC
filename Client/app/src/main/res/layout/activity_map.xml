@@ -8,18 +8,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
         <fragment
             android:id="@+id/addmap"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="0px"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_weight="2"
+            tools:context=".MapActivity"
             android:apiKey="@string/mapkey" />
 
     </LinearLayout>

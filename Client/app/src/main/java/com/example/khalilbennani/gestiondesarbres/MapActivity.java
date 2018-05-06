@@ -70,8 +70,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         // Initialiser le service de localisation
         //Localisation.initialize(this);
-        try { localisation = Localisation.instance(); }
-        catch (Exception e) { e.printStackTrace(); }
+//        try { localisation = Localisation.instance(); }
+       // catch (Exception e) { e.printStackTrace(); }
 
     }
 
