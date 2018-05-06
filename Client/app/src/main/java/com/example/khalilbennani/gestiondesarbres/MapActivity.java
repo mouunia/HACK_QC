@@ -51,8 +51,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
         Bundle b= getIntent().getExtras();
         Intent intent = getIntent();
-        coord_x = b.getDouble("lat");
-        coord_y = b.getDouble("lng");
+        coord_x = b.getDouble("lng");
+        coord_y = b.getDouble("lat");
         LAT_LNG_ARBRE = new LatLng(coord_x, coord_y);
 
     }
@@ -66,7 +66,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         placerMarqueurArbre();
-        mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(LAT_LNG_ARBRE, 14.0f) );
+        mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(LAT_LNG_ARBRE, 10.0f) );
 
         // Initialiser le service de localisation
         //Localisation.initialize(this);

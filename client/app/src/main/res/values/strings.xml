@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">gestionDesArbres</string>
+    <string name="app_name">Arby</string>
     <string name="title_activity_list_fonct">ListFonctActivity</string>
     <string name="title_activity_mission">MissionActivity</string>
     <string name="title_activity_formulaire">FormulaireActivity</string>
