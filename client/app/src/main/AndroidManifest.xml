@@ -41,7 +41,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".listViewArbreActivity" />
         <activity android:name=".ViewArbreActivity" />
-        <activity android:name=".ChoixDeLaVille"></activity>
+        <activity android:name=".ChoixDeLaVille" />
+        <activity android:name=".ActionActivity"></activity>
     </application>
 
 </manifest>

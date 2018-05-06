@@ -21,15 +21,19 @@
             android:id="@+id/radio_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="changerPage"
             android:text="Longueuil" />
 
         <RadioButton
             android:id="@+id/radio_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="changerPage"
             android:text="Repentigny" />
+
+        <RadioButton
+            android:id="@+id/radio_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Longueuil" />
 
     </RadioGroup>
 
