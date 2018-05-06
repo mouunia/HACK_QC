@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.khalilbennani.gestiondesarbres.ViewArbreActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Features"
+                android:textColor="#000"
+                android:textSize="22sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Type"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/typeFeatures"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.2"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:textColor="#000" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Geometry"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Type"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/typeGeometry"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.2"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:textColor="#000" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Coordinates"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/textCoordinates"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.2"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:textColor="#000" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Properties"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Espece"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/textEspece"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.2"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:textColor="#000" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_weight="0.05"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:text="Diametre Tronc"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/textDiametre"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="0.2"
+                android:fontFamily="casual"
+                android:padding="5dp"
+                android:textColor="#000" />
+
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
+
