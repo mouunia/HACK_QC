@@ -30,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText editPassword;
     private EditText editUsername;
 
+    String response_authentification;
+
 
     JSONObject jsonObject = new JSONObject();
+    JSONObject idJson = new JSONObject();
+
     JSONArray jsonArray =new JSONArray();
-    String json_string;
-    JSONObject geometryCoordinates;
     JSONObject geometryJson;
 
     //creation d un tableau de Double pour mettre les coordones prises du json
@@ -55,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         editUsername = (EditText) findViewById(R.id.username);
         rememberMe = (CheckBox) findViewById(R.id.rememberMe);
         rememberPassword = (CheckBox) findViewById(R.id.rememberPassword);
-
 
 
         String username = Preferences.get(Preferences.USERNAME);
@@ -94,11 +95,69 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+                //verification par id
+
+                OkHttpClient clientAuthentification = new OkHttpClient();
+                String url = "https://jsonplaceholder.typicode.com/posts?userId=1&id=1";
+
+                final Request requestUrl = new Request.Builder()
+                        .url(url)
+                        .build();
+                // faire le call back pour la reponse du serveur
+
+                clientAuthentification.newCall(requestUrl).enqueue(new Callback() {
+
+                    @Override
+                    public void onFailure(Request request, IOException e) {
+                        Log.i("Connection Echoue:", "mauvais mot de passe ou nom d utilisateur");
+                    }
+
+                    @Override
+                    public void onResponse(Response response) throws IOException {
+                        response_authentification = response.body().string();
+
+                        Log.i("Omaaar:", response_authentification);
+
+                        try {
+                            idJson = new JSONObject(response_authentification);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        Boolean test = false;
+
+                        try {
+                            test = idJson.getString("id").equals(1);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        if (username.equals("Ben") && password.equals("ben")) {
+                                Log.i("connection:", "Etablie");
+
+                                    //si tous les tests === reussis
+                                    onStartClick(view);
+
+                            }
+
+
+
+
+                    }
+
+
+                });
+
+
                 //bypass
                 if (username.equals("bypass")) {
                     onStartClick(view);
                 }
+
+
             }
+
         });
     }
 
