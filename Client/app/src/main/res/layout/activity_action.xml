@@ -38,26 +38,28 @@
     </RadioGroup>
 
 
+
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="130dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
     <Button
         android:id="@+id/button_apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="37dp"
-        android:text="Confirmer" />
-
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="91dp">
+        android:layout_marginBottom="54dp"
+        android:text="Confirmer" />
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="300dp"
-            android:layout_height="120dp"
-            android:hint="hint" />
-    </android.support.design.widget.TextInputLayout>
 
 </RelativeLayout>
