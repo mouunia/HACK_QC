@@ -3,4 +3,6 @@
     <string name="title_activity_list_fonct">ListFonctActivity</string>
     <string name="title_activity_mission">MissionActivity</string>
     <string name="title_activity_formulaire">FormulaireActivity</string>
+    <string name="mapkey">AIzaSyBKEV6o7mDlMblVWYpLrP1sKnJjAGLX1-0</string>
+
 </resources>

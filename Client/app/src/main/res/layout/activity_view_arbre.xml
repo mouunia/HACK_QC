@@ -90,6 +90,13 @@
             android:text="Coordinates"
             android:textColor="#000" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:text="voir position"
+            android:onClick="OnViewPositionClick"/>
+
         <TextView
             android:id="@+id/textCoordinates"
             android:layout_height="wrap_content"
@@ -174,10 +181,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="100dp"
             android:layout_marginBottom="10dp"
-            android:text="Action Sur l'arbre"
+            android:layout_marginLeft="100dp"
             android:onClick="changerDePage"
-            />
+            android:text="Action Sur l'arbre" />
 
     </LinearLayout>
