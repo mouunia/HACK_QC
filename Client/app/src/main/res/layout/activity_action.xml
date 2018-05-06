@@ -59,7 +59,16 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="54dp"
-        android:text="Confirmer" />
+        android:onClick="confirmer"
+        android:text="confirmer" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:text="Commentaires:" />
 
 
 </RelativeLayout>
