@@ -62,4 +62,9 @@ public class Arbre {
         this.diametre = diametre;
     }
 
+    @Override
+    public String toString() {
+        return this.espece + "_" + this.diametre;
+    }
+
 }
