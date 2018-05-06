@@ -1,5 +1,6 @@
 package com.example.khalilbennani.gestiondesarbres;
 
+import android.app.SearchManager;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ public class ViewArbreActivity extends AppCompatActivity {
 
     double coord_x;
     double coord_y;
+    String query;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +33,7 @@ public class ViewArbreActivity extends AppCompatActivity {
         textEspece.setText(b.getString("textEspece"));
         textDiametre.setText(""+b.getDouble("textDiametre"+"")+" Cm");
 
-
+        query = b.getString("textEspece");
     }
 
     public void OnViewPositionClick (View v)
@@ -45,4 +48,21 @@ public class ViewArbreActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ActionActivity.class);
         startActivity(intent);
     }
+
+
+    public void vueGoogle(View v){
+        /*
+        Uri uri = Uri.parse("https://www.google.com/search?q="+query);
+        Intent gSearchIntent = new Intent(Intent.ACTION_VIEW, uri);
+        activity.startActivity(gSearchIntent);
+        */
+
+        Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
+        intent.putExtra(SearchManager.QUERY, query); // query contains search string
+        startActivity(intent);
+
+    }
+
+
 }
+

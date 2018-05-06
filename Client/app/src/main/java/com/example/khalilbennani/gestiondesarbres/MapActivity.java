@@ -81,12 +81,5 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         mMap.addMarker(markerArbre);
     }
 
-    // Permet de deplacer la camera pour le centrer sur une position lors d'une recherche d'une
-    // adresse, ou d'un ajout d'un endroit que l'usager(e) veut faire.
-    public static void FocusCameraSur(LatLng position, GoogleMap googleMap) {
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(position);
-        googleMap.addMarker(markerOptions);
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(position, 12));
-    }
+
 }
