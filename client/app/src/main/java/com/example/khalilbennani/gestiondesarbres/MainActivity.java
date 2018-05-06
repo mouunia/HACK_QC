@@ -270,10 +270,6 @@ public class MainActivity extends AppCompatActivity {
                 if (username.equals("bypass")) {
                     onStartClick(view);
                 }
-                //on va recuperer le user et password
-                //on va les hash et envoyer vers le serveur
-                // if (username.equals("Ben") && password.equals("ben")) {
-                //creation client httpok
 
 
             }
