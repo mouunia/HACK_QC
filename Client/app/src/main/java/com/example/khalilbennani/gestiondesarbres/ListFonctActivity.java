@@ -40,6 +40,12 @@ public class ListFonctActivity extends AppCompatActivity {
     //etat de la progression
     private int mProgressStatus = 0;
 
+    //boolean pour choisir la ville
+    Boolean longueuil = false;
+
+    //string pour l adresse de la ville a choisir
+    String url;
+
     private Handler mHandler = new Handler();
 
 
@@ -84,7 +90,14 @@ public class ListFonctActivity extends AppCompatActivity {
 
 
         OkHttpClient client = new OkHttpClient();
-        String url = "https://www.longueuil.quebec/sites/longueuil/files/donnees_ouvertes/arbres.json";
+
+        if(longueuil){
+               url = "https://www.longueuil.quebec/sites/longueuil/files/donnees_ouvertes/arbres.json";
+
+        }else{
+                url = "https://www.longueuil.quebec/sites/longueuil/files/donnees_ouvertes/arbres.json";
+
+        }
 
         final Request request = new Request.Builder().url(url).build();
 
