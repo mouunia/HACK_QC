@@ -68,8 +68,12 @@ public class listViewArbreActivity extends AppCompatActivity {
     //TODO...
     private void startViewEndroitActivity(Arbre e){
         Intent intent = new Intent(this, ViewArbreActivity.class);
-       // intent.putExtra("id", e.getId()); // <-- TODO : get this to work
-       // intent.putExtra("adresse", e.getAdresse());
+        intent.putExtra("typeFeature", e.getType()); // <-- TODO : get this to work
+        intent.putExtra("typeGeometry", e.getTypeGeo());
+        intent.putExtra("textCoordinates_x", e.getCoord_x());
+        intent.putExtra("textCoordinates_y", e.getCoord_y());
+        intent.putExtra("textEspece", e.getEspece());
+        intent.putExtra("textDiametre", e.getDiametre());
         startActivity(intent);
     }
 

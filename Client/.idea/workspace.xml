@@ -11,9 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b14eb51c-c61a-4423-bc30-42d3af375799" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbi.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbi.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_list_fonct.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_list_fonct.xml" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ViewArbreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ViewArbreActivity.java" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="341">
-              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+              <caret line="109" column="48" lean-forward="true" selection-start-line="102" selection-start-column="24" selection-end-line="109" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#5450#5451#0" expanded="true" />
@@ -71,13 +70,13 @@
       <file leaf-file-name="listViewArbreActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="62" column="66" lean-forward="false" selection-start-line="62" selection-start-column="66" selection-end-line="62" selection-end-column="66" />
+            <state relative-caret-position="252">
+              <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1768#1775#0" expanded="true" />
-                <element signature="e#2467#2468#0" expanded="true" />
-                <element signature="e#2498#2499#0" expanded="true" />
+                <element signature="e#2715#2716#0" expanded="true" />
+                <element signature="e#2746#2747#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -145,8 +144,8 @@
       <file leaf-file-name="ViewArbreActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ViewArbreActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="399">
+              <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -2204,11 +2203,12 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Utilitaires/AdapterArbre.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbre.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_list_fonct.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbi.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ViewArbreActivity.java" />
       </list>
     </option>
   </component>
@@ -2583,8 +2583,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1768#1775#0" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="e#2498#2499#0" expanded="true" />
+            <element signature="e#2715#2716#0" expanded="true" />
+            <element signature="e#2746#2747#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2611,14 +2611,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="-126">
           <caret line="6" column="20" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ViewArbreActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -2676,17 +2668,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="66" column="48" lean-forward="false" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
-          <folding>
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1261#1262#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_list_fonct.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -2698,15 +2679,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/Arbre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="62" column="66" lean-forward="false" selection-start-line="62" selection-start-column="66" selection-end-line="62" selection-end-column="66" />
+        <state relative-caret-position="425">
+          <caret line="66" column="48" lean-forward="false" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1768#1775#0" expanded="true" />
-            <element signature="e#2467#2468#0" expanded="true" />
-            <element signature="e#2498#2499#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+            <element signature="e#1261#1262#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2729,10 +2708,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ViewArbreActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/listViewArbreActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="75" column="39" lean-forward="false" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1768#1775#0" expanded="true" />
+            <element signature="e#2715#2716#0" expanded="true" />
+            <element signature="e#2746#2747#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/khalilbennani/gestiondesarbres/ListFonctActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="341">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <caret line="109" column="48" lean-forward="true" selection-start-line="102" selection-start-column="24" selection-end-line="109" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#5450#5451#0" expanded="true" />
