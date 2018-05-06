@@ -24,7 +24,7 @@ public class ViewArbreActivity extends AppCompatActivity {
         typeGeo.setText(b.getString("typeGeometry"));
         textCoord.setText("("+String.valueOf(b.getDouble("textCoordinates_x"))+","+String.valueOf(b.getDouble("textCoordinates_y"))+")");
         textEspece.setText(b.getString("textEspece"));
-        textDiametre.setText(String.valueOf(b.getFloat("textDiametre")));
+        textDiametre.setText(""+b.getDouble("textDiametre"+"")+" Cm");
 
 
     }

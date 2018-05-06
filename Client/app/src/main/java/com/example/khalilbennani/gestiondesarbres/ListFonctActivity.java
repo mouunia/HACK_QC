@@ -96,18 +96,20 @@ public class ListFonctActivity extends AppCompatActivity {
                         arbreTemp.setCoord_x(Double.parseDouble(tableau.getString(0)));
                         arbreTemp.setCoord_y(Double.parseDouble(tableau.getString(1)));
 
-                        //affichier les porprietes
+
                         arbreTemp.setEspece(porprieteJson.get("Espece").toString());
+
                         Object diametreObject = porprieteJson.get("Diametre_Tronc");
-                        String diametreString = diametreObject.toString();
+                        String diametreString = String.valueOf(diametreObject);
                         double diametre = 0;
+
                         try {
-                            diametre = Double.parseDouble(diametreString);
-                            arbreTemp.setDiametre(diametre);
+                            arbreTemp.setDiametre(Double.parseDouble(diametreString));
 
                         } catch (NumberFormatException e)
                         {
                             e.printStackTrace();
+                            arbreTemp.setDiametre(0);
                         }
 
                         listArbres.add(arbreTemp);
